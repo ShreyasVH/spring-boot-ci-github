@@ -1,0 +1,11 @@
+services:
+  spring-boot-ci-github-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "1537:1537"
+    volumes:
+      - .:/app
+      - /app/target
+    container_name: spring-boot-ci-github-dev

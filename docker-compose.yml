@@ -1,0 +1,9 @@
+services:
+  spring-boot-ci-github:
+    build:
+      context: ./
+      args:
+        VERSION: ${VERSION}
+    ports:
+      - "1537:1537"
+    container_name: spring-boot-ci-github
