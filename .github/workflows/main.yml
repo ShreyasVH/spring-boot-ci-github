@@ -39,6 +39,12 @@ jobs:
       - name: Check docker version
         run: docker -v
 
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
 #      - name: Docker build
 #        run: docker build . -t shreyasvh/spring-boot-ci-github
 #
@@ -63,3 +69,4 @@ jobs:
           tags: |
             shreyasvh/spring-boot-ci-github:${{ steps.ver.outputs.version }}
             shreyasvh/spring-boot-ci-github:latest
+          platforms: linux/amd64,linux/arm64
