@@ -68,5 +68,5 @@ jobs:
             VERSION=${{ steps.ver.outputs.version }}
           tags: |
             shreyasvh/spring-boot-ci-github:${{ steps.ver.outputs.version }}
-#            shreyasvh/spring-boot-ci-github:latest
+            shreyasvh/spring-boot-ci-github:latest
           platforms: linux/amd64,linux/arm64
