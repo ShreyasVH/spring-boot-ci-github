@@ -53,7 +53,7 @@ jobs:
           password: ${{ secrets.dockerhubpassword }}
 
       - name: Docker Build and push
-        if: github.ref_name == 'main'
+        if: github.ref_name == 'main' || github.ref_name == '1-update-the-ci-steps-to-push-both-arm-and-amd-images'
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -62,4 +62,5 @@ jobs:
             VERSION=${{ steps.ver.outputs.version }}
           tags: |
             shreyasvh/spring-boot-ci-github:${{ steps.ver.outputs.version }}
-            shreyasvh/spring-boot-ci-github:latest
+#            shreyasvh/spring-boot-ci-github:latest
+          platforms: linux/amd64,linux/arm64
